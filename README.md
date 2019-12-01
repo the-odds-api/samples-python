@@ -10,8 +10,9 @@ For more info on the API, [see the docs](https://the-odds-api.com/liveapi/guides
 
 ## Get Started
 
-
-`python sample.py --api-key YOUR-API-KEY-HERE`
+```
+python sample.py --api-key YOUR-API-KEY-HERE
+```
 
 This will print:
 - A list of in-season sports
@@ -34,8 +35,12 @@ Running sample.py once will use 1 request from the quota.
 
 Build the image
 
-`docker build -t theoddsapi/sample:latest .`
+```
+docker build -t theoddsapi/sample:latest .
+```
 
 Run the python script in the container
 
-`docker run -t -i --rm -v "$(pwd)":/usr/src/app/ theoddsapi/sample:latest python sample.py --api-key YOUR-API-KEY-HERE`
+```
+docker run -t -i --rm -v "$(pwd)":/usr/src/app/ theoddsapi/sample:latest python sample.py --api-key YOUR-API-KEY-HERE
+```
