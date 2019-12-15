@@ -1,6 +1,6 @@
 # The Odds API Code Samples (v3) - Python
 
-The Odds API provides live odds for loads of sports from bookmakers in the US, UK and AU, in an easy to use JSON format.
+The Odds API provides live odds for loads of sports from bookmakers around the world, in an easy to use JSON format.
 
 Before getting started, be sure to get a free API key from [https://the-odds-api.com](https://the-odds-api.com)
 

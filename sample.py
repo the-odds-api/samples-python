@@ -13,7 +13,7 @@ API_KEY = args.api_key or 'YOUR_API_KEY'
 
 SPORT = 'upcoming' # use the sport_key from the /sports endpoint below, or use 'upcoming' to see the next 8 games across all sports
 
-REGION = 'uk' # uk | us | au
+REGION = 'uk' # uk | us | eu | au
 
 MARKET = 'h2h' # h2h | spreads | totals
 
