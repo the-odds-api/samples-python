@@ -2,7 +2,7 @@ import json
 import requests
 import argparse
 
-parser = argparse.ArgumentParser(description='Sample')
+parser = argparse.ArgumentParser(description='Sample V4')
 parser.add_argument('--api-key', type=str, default='')
 args = parser.parse_args()
 
