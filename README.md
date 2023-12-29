@@ -10,7 +10,7 @@ For more info on the API, [see the docs](https://the-odds-api.com/liveapi/guides
 ## Get Started
 
 ```
-python sample-v4.py --api-key YOUR_API_KEY
+python odds.py --api-key YOUR_API_KEY
 ```
 
 This will print:
@@ -18,7 +18,7 @@ This will print:
 - Events and odds for the next 8 upcoming games (across all sports)
 - Requests used & remaining for your api key
 
-To change the sport, region and market, see the parameters specified at the beginning of sample-v4.py
+To change the sport, region and market, see the parameters specified at the beginning of odds.py
 
 Make sure the requests library is installed `pip install requests`
 
@@ -37,9 +37,5 @@ docker build -t theoddsapi/sample:latest .
 Run the python script in the container
 
 ```
-docker run -t -i --rm -v "$(pwd)":/usr/src/app/ theoddsapi/sample:latest python sample-v4.py --api-key YOUR_API_KEY
+docker run -t -i --rm -v "$(pwd)":/usr/src/app/ theoddsapi/sample:latest python odds.py --api-key YOUR_API_KEY
 ```
-
-## Older API versions
-
-These samples will work for older API versions by running the relevant `sample-{version}.py` file.

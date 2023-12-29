@@ -13,15 +13,29 @@ args = parser.parse_args()
 # Get a free API key at https://api.the-odds-api.com/
 API_KEY = args.api_key or 'YOUR_API_KEY'
 
-SPORT = 'upcoming' # use the sport_key from the /sports endpoint below, or use 'upcoming' to see the next 8 games across all sports
+# Sport key
+# Find sport keys from the /sports endpoint below, or from https://the-odds-api.com/sports-odds-data/sports-apis.html
+# Alternatively use 'upcoming' to see the next 8 games across all sports
+SPORT = 'upcoming'
 
-REGIONS = 'us' # uk | us | eu | au. Multiple can be specified if comma delimited
+# Bookmaker regions
+# uk | us | us2 | eu | au. Multiple can be specified if comma delimited.
+# More info at https://the-odds-api.com/sports-odds-data/bookmaker-apis.html
+REGIONS = 'us'
 
-MARKETS = 'h2h,spreads' # h2h | spreads | totals. Multiple can be specified if comma delimited
+# Odds markets
+# h2h | spreads | totals. Multiple can be specified if comma delimited
+# More info at https://the-odds-api.com/sports-odds-data/betting-markets.html
+# Note only featured markets (h2h, spreads, totals) are available with the odds endpoint.
+MARKETS = 'h2h,spreads'
 
-ODDS_FORMAT = 'decimal' # decimal | american
+# Odds format
+# decimal | american
+ODDS_FORMAT = 'decimal'
 
-DATE_FORMAT = 'iso' # iso | unix
+# Date format
+# iso | unix
+DATE_FORMAT = 'iso'
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
 #
