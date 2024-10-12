@@ -1,8 +1,4 @@
-""" Sample code to query historical odds
-
-This script will only work for featured market keys (h2h, spreads, totals).
-
-To query any available market, see the historical-event-odds.py
+""" Sample code to query historical odds for any market for a single event
 
 Historical odds are only available on paid usage plans.
 
@@ -35,10 +31,9 @@ SPORT = 'basketball_nba'
 REGIONS = 'us' 
 
 # Odds markets
-# h2h | spreads | totals. Multiple can be specified if comma delimited
+# Multiple can be specified if comma delimited
 # More info at https://the-odds-api.com/sports-odds-data/betting-markets.html
-# Note only featured markets (h2h, spreads, totals) are available with the historical odds endpoint.
-MARKETS = 'h2h' 
+MARKETS = 'h2h_h1,player_points,player_rebounds,player_assists' 
 
 # Odds format
 # decimal | american
@@ -52,6 +47,12 @@ DATE_FORMAT = 'iso'
 # Must be in ISO8601 format
 DATE = '2023-11-01T20:00:00Z'
 
+# Event ID
+# A list of event ids at this timestamp can be found using the events endpoint, for example:
+# https://api.the-odds-api.com/v4/historical/sports/{sport_key}/events?apiKey={API_KEY}&date={DATE}
+# This event id is for the Trail Blazers @ Pistons game on 2023-11-01
+EVENT_ID = '80ef276018c492f53d3c94229942e855'
+
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
 #
 # Query bookmaker odds for live and upcoming games as they were at the specified DATE parameter.
@@ -60,7 +61,7 @@ DATE = '2023-11-01T20:00:00Z'
 #
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
 
-odds_response = requests.get(f'https://api.the-odds-api.com/v4/historical/sports/{SPORT}/odds', params={
+odds_response = requests.get(f'https://api.the-odds-api.com/v4/historical/sports/{SPORT}/events/{EVENT_ID}/odds', params={
     'api_key': API_KEY,
     'regions': REGIONS,
     'markets': MARKETS,
